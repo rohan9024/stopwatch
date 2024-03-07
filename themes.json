@@ -1,0 +1,54 @@
+{
+  "themes": {
+    "Aesthetic": [
+      "/aesthetic1.png",
+      "/aesthetic2.png",
+      "/aesthetic3.png",
+      "/aesthetic4.png",
+      "/aesthetic5.png",
+      "/aesthetic6.png",
+      "/aesthetic7.png"
+    ],
+    "Gradient": [
+      "/g1.png",
+      "/g2.png",
+      "/g3.png",
+      "/g4.png",
+      "/g5.png",
+      "/g6.png",
+      "/g7.png",
+      "/g8.png",
+      "/g9.png",
+      "/g10.png",
+      "/g11.png",
+      "/g12.png",
+      "/g13.png",
+      "/g14.png",
+      "/g15.png",
+      "/g16.png",
+      "/g17.png",
+      "/g18.png",
+      "/g19.png",
+      "/g20.png"
+    ],
+    "Marvel": [
+      "/m1.png",
+      "/m2.png",
+      "/m3.png",
+      "/m4.png",
+      "/m5.png",
+      "/m6.png",
+      "/m7.png",
+      "/m8.png"
+    ],
+    "Anime": ["/a1.png", "/a2.png", "/a3.png", "/a4.png", "/a5.png"],
+    "BTS": [
+      "/bts1.png",
+      "/bts2.png",
+      "/bts3.png",
+      "/bts4.png",
+      "/bts5.png",
+      "/bts6.png"
+    ]
+  }
+}
