@@ -24,7 +24,7 @@ const manrope = Manrope({
 export default function Home() {
 
   const [isLoading, setIsLoading] = useState(true);
-  const [wallpaper, setWallpaper] = useState("/m1.jpg");
+  const [wallpaper, setWallpaper] = useState("/m8.png");
 
   useEffect(() => {
     setTimeout(() => {
