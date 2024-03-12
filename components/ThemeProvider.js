@@ -20,6 +20,8 @@ function ThemeProvider({ choice }) {
 
       {themes["themes"][choice].map((img) => (
         <div className="w-[300px] h-[150px] rounded-2xl cursor-pointer ">
+
+          
           <Image
             src={img}
             width={20000}
