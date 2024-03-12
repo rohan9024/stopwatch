@@ -49,6 +49,11 @@
       "/bts4.png",
       "/bts5.png",
       "/bts6.png"
+    ],
+    "Dark": [
+      "/d1.png",
+      "/d2.png",
+      "/d3.png"
     ]
   }
 }

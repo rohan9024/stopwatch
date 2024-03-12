@@ -42,7 +42,6 @@ function Homepage() {
     // const [play] = useSound('/alarm.mp3', { duration: 1 });
     const [play, { stop }] = useSound('/alarm.mp3', { volume: 0.5 });
 
-    const [handleModal, setHandleModal] = useState(false)
     useEffect(() => {
         let interval = null;
 
@@ -66,7 +65,7 @@ function Homepage() {
     }, [isActive, seconds, minutes]);
 
     // const [wallpaper, setWallpaper] = useState('/bg4.jpg'); // Set default wallpaper here
-    const { wallpaper, setWallpaper } = useContext(ThemeContext)
+    const { wallpaper, setWallpaper, handleModal, setHandleModal } = useContext(ThemeContext)
 
     // useEffect(() => {
     //     if (typeof window !== 'undefined') {
@@ -126,16 +125,21 @@ function Homepage() {
                         >
                             <div className={`${manrope.className} flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 text-black`}>
                                 <motion.div
-                                    className=" transform  rounded-lg bg-[#F3F0E7] h-[700px] w-[1200px] p-5 text-left shadow-xl transition-all overflow-y-scroll overflow-x-hidden"
+                                    // className=" transform  rounded-lg bg-[#F3F0E7] h-[700px] w-[1200px] p-5 text-left shadow-xl transition-all overflow-y-scroll overflow-x-hidden"
+                                    className=" transform  rounded-lg bg-black  opacity-80 backdrop-blur-sm h-[700px] w-[1200px] p-5 text-left shadow-xl transition-all overflow-y-scroll overflow-x-hidden"
                                 >
-                                    <Image
-                                        src="/close.png"
-                                        width={20000}
-                                        height={20000}
-                                        quality={100}
-                                        className="w-6 h-6 object-contain cursor-pointer"
-                                        onClick={() => setHandleModal(false)}
-                                    />
+
+                                    <div class="flex justify-center items-center w-10 h-10  bg-white rounded-full cursor-pointer ">
+
+                                        <Image
+                                            src="/close.png"
+                                            width={20000}
+                                            height={20000}
+                                            quality={100}
+                                            className="w-4 h-4 object-contain"
+                                            onClick={() => setHandleModal(false)}
+                                        />
+                                    </div>
 
                                     <div className="flex justify-center items-center mt-10 ">
 
@@ -158,13 +162,13 @@ function Homepage() {
                                         </div>
                                         <div class="bg-gray-900 w-[2px] h-[500px] " />
                                         {/* Right side */}
-                                        <div className="w-5/6 flex flex-col ml-10  ">
+                                        <div className="w-5/6 flex flex-col ml-10  text-white">
                                             <div class="flex flex-col space-y-5">
 
                                                 <div class="flex justify-between items-center">
                                                     <h1 class="text-3xl font-bold ">Pick a Theme</h1>
 
-                                                    <div class="flex space-x-3 justify-between items-center cursor-pointer hover:border-gray-900 hover:border transition ease-in-out duration-300 hover:rounded-full p-3">
+                                                    <div class="flex space-x-3 justify-between items-center cursor-pointer border-gray-500  border  transition ease-in-out duration-300 rounded-full p-3">
                                                         <Image
                                                             src="/upload.png"
                                                             width={20000}
@@ -185,6 +189,9 @@ function Homepage() {
                                                 <h1
                                                     onClick={() => setTabActive('Aesthetic')}
                                                     class={` ${tabActive == "Aesthetic" && 'bg-yellow-400 text-black hover:bg-yellow-400'} w-[140px] py-4 rounded-full cursor-pointer transition ease-in-out duration-300`}>Aesthetic</h1>
+                                                <h1
+                                                    onClick={() => setTabActive('Dark')}
+                                                    class={` ${tabActive == "Dark" && 'bg-yellow-400 text-black hover:bg-yellow-400'} w-[140px] py-4 rounded-full cursor-pointer transition ease-in-out duration-300`}>Dark</h1>
                                                 <h1
                                                     onClick={() => setTabActive('Gradient')}
                                                     class={` ${tabActive == "Gradient" && 'bg-yellow-400 text-black hover:bg-yellow-400'} w-[140px] py-4 rounded-full cursor-pointer transition ease-in-out hover:bg-gray-200 hover:text-black duration-300`}>Gradient</h1>

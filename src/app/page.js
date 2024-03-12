@@ -25,6 +25,7 @@ export default function Home() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [wallpaper, setWallpaper] = useState("/m8.png");
+  const [handleModal, setHandleModal] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
@@ -39,7 +40,7 @@ export default function Home() {
           <JellyTriangle color="black" size={100} />
         </div>
       ) : (
-        <ThemeContext.Provider value={{ wallpaper, setWallpaper }}>
+        <ThemeContext.Provider value={{ wallpaper, setWallpaper,handleModal, setHandleModal }}>
           <Homepage />
         </ThemeContext.Provider>
 

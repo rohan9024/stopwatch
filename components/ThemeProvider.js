@@ -5,7 +5,7 @@ import { ThemeContext } from '../contexts/ThemeContext'
 
 
 function ThemeProvider({ choice }) {
-  const { wallpaper, setWallpaper } = useContext(ThemeContext)
+  const { wallpaper, setWallpaper,handleModal, setHandleModal } = useContext(ThemeContext)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -26,7 +26,7 @@ function ThemeProvider({ choice }) {
             height={20000}
             quality={100}
             className=" object-cover rounded-2xl"
-            onClick={() => setWallpaper(img)}
+            onClick={() => {setWallpaper(img); setHandleModal(false)}}
             loading="lazy"
 
           />
