@@ -44,9 +44,9 @@ function Time() {
     return (
         <div className='h-screen w-screen flex justify-center items-center bg-black'>
 
-            <div className='flex  justify-center items-center w-screen space-x-20 text-center'>
+            <div className='flex  justify-center items-center w-screen text-center'>
                 <motion.h1
-                    className={`${poppins.className} text-[400px] font-light text-white w-[400px] `}
+                    className={`${poppins.className} text-[320px] font-light text-white w-[200px] text-center `}
                     variants={textVariants}
                     initial="hidden"
                     animate="visible"
@@ -55,7 +55,7 @@ function Time() {
                     {hours}
                 </motion.h1>
                 <motion.h1
-                    className={`${poppins.className} text-[400px] font-light text-white  w-[400px]`}
+                    className={`${poppins.className} text-[320px] font-light text-white  w-[400px] text-center ml-20`}
                     variants={textVariants}
                     initial="hidden"
                     animate="visible"
@@ -64,7 +64,7 @@ function Time() {
                     {minutes}
                 </motion.h1>
                 <motion.h1
-                    className={`${poppins.className} text-[400px] font-light text-white  w-[400px]`}
+                    className={`${poppins.className} text-[320px] font-light text-white  w-[400px] text-center`}
                     variants={textVariants}
                     initial="hidden"
                     animate="visible"
