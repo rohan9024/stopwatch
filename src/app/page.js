@@ -6,6 +6,7 @@ import { JellyTriangle } from '@uiball/loaders'
 import { useEffect, useState } from 'react';
 import Homepage2 from '../../components/Homepage2';
 import { ThemeContext } from '../../contexts/ThemeContext';
+import Time from '../../components/Time';
 
 
 const raleway = Raleway({
@@ -40,8 +41,9 @@ export default function Home() {
           <JellyTriangle color="black" size={100} />
         </div>
       ) : (
-        <ThemeContext.Provider value={{ wallpaper, setWallpaper,handleModal, setHandleModal }}>
-          <Homepage />
+        <ThemeContext.Provider value={{ wallpaper, setWallpaper, handleModal, setHandleModal }}>
+          {/* <Homepage /> */}
+          <Time />
         </ThemeContext.Provider>
 
       )}
