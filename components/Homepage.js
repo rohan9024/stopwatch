@@ -39,6 +39,7 @@ function Homepage() {
     const [minutes, setMinutes] = useState(25);
     const [tabActive, setTabActive] = useState("Anime")
     const [isActive, setIsActive] = useState(false);
+    const [newWallpaper, setNewWallpaper] = useState(null)
     // const [play] = useSound('/alarm.mp3', { duration: 1 });
     const [play, { stop }] = useSound('/alarm.mp3', { volume: 0.5 });
 
@@ -89,13 +90,26 @@ function Homepage() {
         setIsActive(false);
     };
 
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        setNewWallpaper(file);
+        console.log(newWallpaper)
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setWallpaper(reader.result);
+            };
+            reader.readAsDataURL(file);
+            setHandleModal(false)
+        }
+    };
+
+
     return (
-
-
-
         <>
 
             <Image
+                // src={newWallpaper ? newWallpaper : wallpaper}
                 src={wallpaper}
                 width={20000}
                 height={20000}
@@ -169,15 +183,19 @@ function Homepage() {
                                                     <h1 class="text-3xl font-bold ">Pick a Theme</h1>
 
                                                     <div class="flex space-x-3 justify-between items-center cursor-pointer border-gray-500  border  transition ease-in-out duration-300 rounded-full p-3">
-                                                        <Image
-                                                            src="/upload.png"
-                                                            width={20000}
-                                                            height={20000}
-                                                            quality={100}
-                                                            className="w-6 h-6 object-contain cursor-pointer"
-                                                        // onClick={() => setHandleModal(false)}
-                                                        />
-                                                        <h1 class="text-xl font-bold ">Upload your theme</h1>
+                                                        <input type="file" onChange={handleFileChange} accept="image/*" style={{ display: "none" }} id="theme-image-input" />
+                                                        <label htmlFor="theme-image-input" >
+                                                            <div className='flex justify-between items-center space-x-5'>
+                                                                <Image
+                                                                    src="/upload.png"
+                                                                    width={24}
+                                                                    height={24}
+                                                                    alt="Upload Icon"
+                                                                />
+                                                                <span>Upload your theme</span>
+                                                            </div>
+                                                        </label>
+                                                        <input type="file" id="theme-image-input" onChange={handleFileChange} accept="image/*" style={{ display: "none" }} />
 
                                                     </div>
                                                 </div>

@@ -4,10 +4,8 @@ import { Inter, Manrope, Raleway } from 'next/font/google';
 import Homepage from '../../components/Homepage';
 import { JellyTriangle } from '@uiball/loaders'
 import { useEffect, useState } from 'react';
-import Homepage2 from '../../components/Homepage2';
 import { ThemeContext } from '../../contexts/ThemeContext';
-import Time from '../../components/Time';
-
+import Minimal from '../../components/Minimal';
 
 const raleway = Raleway({
   weight: ['400', '500', '600', '700', '800'],
@@ -27,6 +25,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [wallpaper, setWallpaper] = useState("/m8.png");
   const [handleModal, setHandleModal] = useState(false)
+  const [theme, setTheme] = useState("")
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,9 +40,15 @@ export default function Home() {
           <JellyTriangle color="black" size={100} />
         </div>
       ) : (
-        <ThemeContext.Provider value={{ wallpaper, setWallpaper, handleModal, setHandleModal }}>
-          {/* <Homepage /> */}
-          <Time />
+        <ThemeContext.Provider value={{ wallpaper, setWallpaper, handleModal, setHandleModal, theme, setTheme }}>
+          {
+            theme == "Minimal" ? (
+              <Minimal />
+            ) :
+              (
+                <Homepage />
+              )
+          }
         </ThemeContext.Provider>
 
       )}
